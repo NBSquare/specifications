@@ -132,6 +132,10 @@ Standard API
      * @note Drivers MAY combine the two options types into a single one. If the options are
      *   explicitly typed, the combined options type MUST be named CreateIndexOptions or an acceptable
      *   variation.
+     *
+     * @note New drivers implementing index management MAY opt to return an interface containing the response from the
+     *   createIndexes method. If the driver choose to do so, the interface MUST also contain the name of the created
+     *   index.
      */
     createIndex(keys: Document, indexOptions: Optional<IndexOptions>, options: Optional<CreateIndexOptions>): String;
 
@@ -159,6 +163,10 @@ Standard API
      * options passed to the createIndexes command.
      *
      * @return The names of all the indexes that were created.
+     *
+     * @note New drivers implementing index management MAY opt to return an interface containing the response from the
+     *   createIndexes method. If the driver chooses to do so, the interface MUST also contain the names of all the
+     *   indexes that were created.
      */
     createIndexes(models: Iterable<IndexModel>, options: Optional<CreateIndexesOptions>): Iterable<String>;
 
