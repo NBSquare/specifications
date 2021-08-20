@@ -106,9 +106,9 @@ A non-exhaustive list of acceptable naming deviations are as follows:
 Index Name Generation
 ---------------------
 
-When the client generates a name for an index based on the keys, The driver MUST generate the name as key-direction pairs, separated by underscores. For example, the key ``{ name: 1, dob: -1 }`` MUST generate an index name of ``name_1_dob_-1``.
+When the client does not specify a name for an index, he driver MUST generate a name based on the keys as key-direction pairs, separated by underscores. For example, the key ``{ name: 1, dob: -1 }`` MUST generate an index name of ``name_1_dob_-1``.
 
-Note there is one exception to this rule on the ``_id`` field. The server uses an index name with no direction, ``_id_``, which cannot be overridden.
+Note there is one exception to this rule on the default ``_id`` index. The server uses an index name with no direction, ``_id_``, which cannot be overridden.
 
 ------------
 Standard API
